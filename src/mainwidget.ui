@@ -1,0 +1,903 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWidget</class>
+ <widget class="QWidget" name="MainWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1499</width>
+    <height>882</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Music Tag Editor</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QFrame" name="frame">
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="lblPath">
+        <property name="text">
+         <string>Path:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="txtPath">
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnBack">
+        <property name="text">
+         <string>Back</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QSplitter" name="splitter">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <widget class="QFrame" name="frame_3">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>500</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="baseSize">
+       <size>
+        <width>100</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QTreeView" name="twDirs">
+         <property name="alternatingRowColors">
+          <bool>true</bool>
+         </property>
+         <property name="indentation">
+          <number>5</number>
+         </property>
+         <property name="rootIsDecorated">
+          <bool>false</bool>
+         </property>
+         <property name="uniformRowHeights">
+          <bool>true</bool>
+         </property>
+         <property name="sortingEnabled">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QWidget" name="widget" native="true">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>20</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QFrame" name="frmFileList">
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <widget class="QTreeView" name="twFiles">
+         <property name="contextMenuPolicy">
+          <enum>Qt::CustomContextMenu</enum>
+         </property>
+         <property name="alternatingRowColors">
+          <bool>true</bool>
+         </property>
+         <property name="selectionMode">
+          <enum>QAbstractItemView::ExtendedSelection</enum>
+         </property>
+         <property name="indentation">
+          <number>5</number>
+         </property>
+         <property name="rootIsDecorated">
+          <bool>false</bool>
+         </property>
+         <property name="uniformRowHeights">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QFrame" name="frame_2">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="label_6">
+        <property name="text">
+         <string>Files in cache:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="lblCachedFiles">
+        <property name="minimumSize">
+         <size>
+          <width>50</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>0</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>Changed files:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="lblChangedFiles">
+        <property name="minimumSize">
+         <size>
+          <width>50</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>0</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>Reading:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="lblReading">
+        <property name="minimumSize">
+         <size>
+          <width>50</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>0</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_3">
+        <property name="text">
+         <string>Writing:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="lblWriting">
+        <property name="minimumSize">
+         <size>
+          <width>50</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>0</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="lblFilename">
+        <property name="text">
+         <string>Filename</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="txtFilename"/>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QFrame" name="frmInfo">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>250</height>
+      </size>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_2">
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>5</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <property name="spacing">
+       <number>3</number>
+      </property>
+      <item row="0" column="0">
+       <widget class="WTagEditor" name="wTagEdit" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>550</width>
+          <height>16777215</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QFrame" name="frame_4">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>400</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_3">
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <property name="spacing">
+          <number>2</number>
+         </property>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_4">
+           <property name="maximumSize">
+            <size>
+             <width>120</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Original filename:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1" colspan="2">
+          <widget class="QLineEdit" name="txtOriginalFilename">
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="contextMenuPolicy">
+            <enum>Qt::CustomContextMenu</enum>
+           </property>
+           <property name="acceptDrops">
+            <bool>false</bool>
+           </property>
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_5">
+           <property name="maximumSize">
+            <size>
+             <width>120</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>New filename:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0" colspan="3">
+          <widget class="QFrame" name="frame_5">
+           <property name="minimumSize">
+            <size>
+             <width>300</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_3">
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+            <item>
+             <widget class="QTreeWidget" name="treeSeparators">
+              <property name="maximumSize">
+               <size>
+                <width>230</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="alternatingRowColors">
+               <bool>true</bool>
+              </property>
+              <property name="rootIsDecorated">
+               <bool>false</bool>
+              </property>
+              <property name="uniformRowHeights">
+               <bool>true</bool>
+              </property>
+              <property name="itemsExpandable">
+               <bool>false</bool>
+              </property>
+              <property name="allColumnsShowFocus">
+               <bool>true</bool>
+              </property>
+              <attribute name="headerDefaultSectionSize">
+               <number>60</number>
+              </attribute>
+              <column>
+               <property name="text">
+                <string>Sep</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Cnt</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Type</string>
+               </property>
+              </column>
+             </widget>
+            </item>
+            <item>
+             <widget class="QListWidget" name="lstItems">
+              <property name="maximumSize">
+               <size>
+                <width>750</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="contextMenuPolicy">
+               <enum>Qt::CustomContextMenu</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QFrame" name="frame_6">
+              <property name="minimumSize">
+               <size>
+                <width>300</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+              <widget class="QPushButton" name="btnSwapArtistTitle">
+               <property name="geometry">
+                <rect>
+                 <x>170</x>
+                 <y>0</y>
+                 <width>131</width>
+                 <height>21</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>Artist &lt;=&gt; Title</string>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="btnSwapAlbumArtist">
+               <property name="geometry">
+                <rect>
+                 <x>170</x>
+                 <y>20</y>
+                 <width>131</width>
+                 <height>21</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>Album &lt;=&gt; Artist</string>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="btnSwapAlbumTitle">
+               <property name="geometry">
+                <rect>
+                 <x>170</x>
+                 <y>40</y>
+                 <width>131</width>
+                 <height>21</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>Album &lt;=&gt; Title</string>
+               </property>
+              </widget>
+              <widget class="QLineEdit" name="tmpText">
+               <property name="geometry">
+                <rect>
+                 <x>0</x>
+                 <y>140</y>
+                 <width>261</width>
+                 <height>32</height>
+                </rect>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="btnTmpText">
+               <property name="geometry">
+                <rect>
+                 <x>270</x>
+                 <y>140</y>
+                 <width>31</width>
+                 <height>32</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>...</string>
+               </property>
+              </widget>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLineEdit" name="txtNewFilename">
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>30</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="2">
+          <widget class="QPushButton" name="btnResetFilename">
+           <property name="text">
+            <string>Reset</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>WTagEditor</class>
+   <extends>QWidget</extends>
+   <header>wtageditor.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>btnBack</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWidget</receiver>
+   <slot>slotBackPressed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1410</x>
+     <y>35</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>763</x>
+     <y>5</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>txtFilename</sender>
+   <signal>returnPressed()</signal>
+   <receiver>MainWidget</receiver>
+   <slot>slotFilenameReturnPressed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1061</x>
+     <y>877</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>155</x>
+     <y>723</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>treeSeparators</sender>
+   <signal>itemDoubleClicked(QTreeWidgetItem*,int)</signal>
+   <receiver>MainWidget</receiver>
+   <slot>slotSeparatorChange(QTreeWidgetItem*)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>812</x>
+     <y>836</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1095</x>
+     <y>747</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lstItems</sender>
+   <signal>customContextMenuRequested(QPoint)</signal>
+   <receiver>MainWidget</receiver>
+   <slot>slotItemMenuPopup(QPoint)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1280</x>
+     <y>836</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1093</x>
+     <y>665</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>txtOriginalFilename</sender>
+   <signal>selectionChanged()</signal>
+   <receiver>MainWidget</receiver>
+   <slot>slotFnameSelectionChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1486</x>
+     <y>625</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1096</x>
+     <y>537</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>txtOriginalFilename</sender>
+   <signal>customContextMenuRequested(QPoint)</signal>
+   <receiver>MainWidget</receiver>
+   <slot>slotOriginalFnameMenuPopup(QPoint)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1486</x>
+     <y>625</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1098</x>
+     <y>519</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>twDirs</sender>
+   <signal>doubleClicked(QModelIndex)</signal>
+   <receiver>MainWidget</receiver>
+   <slot>slotDirDoubleClicked(QModelIndex)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>138</x>
+     <y>276</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>58</x>
+     <y>-14</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>twFiles</sender>
+   <signal>doubleClicked(QModelIndex)</signal>
+   <receiver>MainWidget</receiver>
+   <slot>slotFileDoubleClicked(QModelIndex)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>568</x>
+     <y>344</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>571</x>
+     <y>-10</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>twFiles</sender>
+   <signal>clicked(QModelIndex)</signal>
+   <receiver>MainWidget</receiver>
+   <slot>slotFileClicked(QModelIndex)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>538</x>
+     <y>349</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>544</x>
+     <y>-10</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>twFiles</sender>
+   <signal>customContextMenuRequested(QPoint)</signal>
+   <receiver>MainWidget</receiver>
+   <slot>slotFileMenuPopup()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>592</x>
+     <y>335</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>443</x>
+     <y>-2</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>twFiles</sender>
+   <signal>activated(QModelIndex)</signal>
+   <receiver>MainWidget</receiver>
+   <slot>slotFileClicked(QModelIndex)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>531</x>
+     <y>498</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>487</x>
+     <y>-6</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnSwapArtistTitle</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWidget</receiver>
+   <slot>slotSwapArtistTitle()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1414</x>
+     <y>685</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1286</x>
+     <y>881</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnSwapAlbumArtist</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWidget</receiver>
+   <slot>slotSwapAlbumArtist()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1320</x>
+     <y>702</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1396</x>
+     <y>881</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnSwapAlbumTitle</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWidget</receiver>
+   <slot>slotSwapAlbumTitle()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1336</x>
+     <y>723</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1107</x>
+     <y>881</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnResetFilename</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWidget</receiver>
+   <slot>slotResetFilename()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1451</x>
+     <y>640</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1495</x>
+     <y>566</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnTmpText</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWidget</receiver>
+   <slot>slotTmpTextMenuPopup()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1472</x>
+     <y>815</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1496</x>
+     <y>525</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>slotBackPressed()</slot>
+  <slot>slotFilenameReturnPressed()</slot>
+  <slot>slotFileMenuPopup()</slot>
+  <slot>slotSeparatorChange(QTreeWidgetItem*)</slot>
+  <slot>slotItemMenuPopup(QPoint)</slot>
+  <slot>slotFnameSelectionChanged()</slot>
+  <slot>slotOriginalFnameMenuPopup(QPoint)</slot>
+  <slot>slotTestBtnClicked()</slot>
+  <slot>slotDirDoubleClicked(QModelIndex)</slot>
+  <slot>slotFileDoubleClicked(QModelIndex)</slot>
+  <slot>slotFileClicked(QModelIndex)</slot>
+  <slot>slotSwapArtistTitle()</slot>
+  <slot>slotSwapAlbumArtist()</slot>
+  <slot>slotSwapAlbumTitle()</slot>
+  <slot>slotResetFilename()</slot>
+  <slot>slotTmpTextMenuPopup()</slot>
+ </slots>
+</ui>

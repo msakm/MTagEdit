@@ -1,0 +1,20 @@
+SCONS=/usr/bin/scons -Q 
+
+all:
+	@$(SCONS)
+
+install:
+	@$(SCONS) install
+
+clean:
+	@$(SCONS) -c
+
+uninstall:
+	@$(SCONS) -c install
+
+dist:
+	@$(SCONS) dist
+
+distclean:
+	@$(SCONS) -c
+	rm -rf cache/

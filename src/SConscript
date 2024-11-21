@@ -1,0 +1,65 @@
+#! /usr/bin/env python
+import os, sys, glob
+
+sys.path.append("..")
+from tcolors import *
+
+#######################
+## Source files
+#######################
+_appname='MTagEdit'
+
+_srclst= [
+'filebrowser.cpp',
+'filebrowsermodel.cpp',
+'filelistmodel.cpp',
+'main.cpp',
+'mainwidget.cpp',
+'mainwindow.cpp',
+'settings.cpp',
+'stringfilter.cpp',
+'tagfile.cpp',
+'tagfilecache.cpp',
+'taggenerator.cpp',
+'taginfo.cpp',
+'tagreaderthread.cpp',
+'tagwriterthread.cpp',
+'trackinfo.cpp',
+'wtageditor.cpp',
+]
+
+_uilst= [
+'mainwidget.ui',
+'wtageditor.ui',
+]
+
+#############################
+# Main
+#############################
+Import('*')
+
+use_qt5 = 1
+if use_qt5:
+    env.Tool('qt5')
+    env.EnableQt5Modules(['QtCore', 'QtGui', 'QtWidgets', 'QtSql'], debug = False)
+    env.Append(CXXFLAGS   = ['-fPIC'])
+    env.Append(CPPDEFINES = ['QT5'])
+else:
+    env.Tool('qt4')
+    env.EnableQt4Modules(['QtCore', 'QtGui', 'QtSql'], debug = False)
+    env.Append(CPPDEFINES = ['QT4'])
+
+for ui in _uilst:
+    env.Uic(ui)
+
+resources = env.Qrc('resources.qrc')
+
+env.Append(CPPPATH = ['#include', '#include/taglib'])
+env.Append(LIBS = ['stdc++', 'tag'])
+#env.Append(LIBS = ['id3'])
+if sys.platform.startswith('win'): # windows
+    env.Append(LIBPATH = ['#libs-win'])
+    env.Append(LIBS = ['tag.dll'])
+    #env.Append(CPPDEFINES = ['ID3LIB_LINKOPTION=1'])
+
+app_bin = env.Program(_appname, _srclst + resources)
