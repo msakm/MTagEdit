@@ -376,7 +376,7 @@ bool TagFile::saveTags() {
     }
     
     // tags not changed (renamed only)
-    if (! m_ntinfo.tagsChanged(m_tinfo)) return true;   
+    if (! m_ntinfo.tagsChanged(m_tinfo) && !m_changed) return true;   
     
     bool ret = false;
     QString fname = m_finfo.absoluteFilePath();
