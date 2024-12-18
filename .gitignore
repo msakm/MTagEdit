@@ -1,0 +1,55 @@
+### C++ ###
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# User project settings
+*.creator.user*
+
+# Qt Creator backups
+*.autosave
+
+# Flags for Clang Code Model
+*.cxxflags
+*.cflags
+
+
+# ignore all files in any directory named build
+build*/
+cache*/
+__pycache__/
+
+Doxyfile
+*.log
+
+# ignore all .pdf files in the doc/ directory and any of its subdirectories
+doc/**/*.pdf
